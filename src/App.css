@@ -1,38 +1,79 @@
 .app {
-  max-width: 960px;
+  max-width: 1180px;
   margin: 0 auto;
   min-height: 100svh;
   display: flex;
+  align-items: flex-start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 240px;
+  flex-shrink: 0;
+  min-height: 100svh;
+  padding: 32px 20px;
+  border-right: 1px solid var(--border);
+  display: flex;
   flex-direction: column;
+  gap: 28px;
 }
 
-.header {
-  padding: 32px 24px 24px;
-  border-bottom: 1px solid var(--border);
-}
-
-.header-content {
+.sidebar-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .header-logo {
-  font-size: 48px;
+  font-size: 36px;
 }
 
-.header h1 {
-  font-size: 32px;
+.sidebar-brand h1 {
+  font-size: 19px;
+  line-height: 1.2;
 }
 
-.header p {
+.sidebar-brand p {
   margin-top: 4px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  background: var(--accent-bg);
+}
+
+.sidebar-link.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.sidebar-footnote {
+  margin-top: auto;
+  font-size: 12px;
   color: var(--text);
 }
 
 .main-content {
   padding: 24px;
   flex: 1;
+  min-width: 0;
 }
 
 .status-message {
@@ -78,6 +119,31 @@
 
 .stat-label {
   font-size: 13px;
+  color: var(--text);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.chart-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.chart-card h2 {
+  font-size: 16px;
+}
+
+.chart-subtitle {
+  margin: 4px 0 12px;
+  font-size: 12px;
   color: var(--text);
 }
 
@@ -155,6 +221,29 @@
   flex-wrap: wrap;
 }
 
+.brewery-row:hover {
+  border-color: var(--accent);
+}
+
+.brewery-row-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brewery-row-website {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
 .brewery-main {
   display: flex;
   align-items: center;
@@ -194,4 +283,79 @@
   text-align: center;
   padding: 32px 0;
   color: var(--text);
+}
+
+.detail-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.back-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text);
+  align-self: flex-start;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.detail-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-header h1 {
+  font-size: 26px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.detail-item dt {
+  font-size: 12px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detail-item dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--text-h);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.detail-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
 }

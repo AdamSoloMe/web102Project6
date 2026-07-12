@@ -7,6 +7,10 @@
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --shadow: rgba(0, 0, 0, 0.08) 0 4px 12px -2px;
+  --chart-grid: #e1e0d9;
+  --chart-axis: #c3c2b7;
+  --chart-muted: #898781;
+  --chart-hover: rgba(170, 59, 255, 0.08);
 
   font: 16px/145% system-ui, "Segoe UI", Roboto, sans-serif;
   color-scheme: light dark;
@@ -26,6 +30,10 @@
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
     --shadow: rgba(0, 0, 0, 0.4) 0 4px 12px -2px;
+    --chart-grid: #2c2c2a;
+    --chart-axis: #383835;
+    --chart-muted: #898781;
+    --chart-hover: rgba(192, 132, 252, 0.12);
   }
 }
 

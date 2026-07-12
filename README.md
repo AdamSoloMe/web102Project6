@@ -1,4 +1,4 @@
-# Project 6: Data Dashboard Part 1
+# Project 6: Data Dashboard Part 2
 
 Submitted by: **Adam Solomon**
 
@@ -8,32 +8,27 @@ Time spent: **4** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] The site has a dashboard displaying a list of data fetched using an API call
-- [x] The dashboard should display at least 10 unique items, one per row
-- [x] The dashboard includes at least two features in each row
-- [x] The `useEffect()` React hook and `async/await` syntax are used
-- [x] The app dashboard includes at least three summary statistics about the data
-  - [x] Total number of breweries
-  - [x] Number of unique states represented
-  - [x] Most common brewery type (mode)
-- [x] A search bar allows the user to search for an item in the fetched data
-  - [x] The search bar correctly filters items in the list, only displaying items matching the search query
-  - [x] The list of results dynamically updates as the user types into the search bar
-- [x] An additional filter allows the user to restrict displayed items by specified categories
-  - [x] The filter restricts items in the list using a different attribute than the search bar (brewery type, and a second filter by state)
-  - [x] The filter correctly filters items in the list, only displaying items matching the filter attribute in the dashboard
-  - [x] The dashboard list dynamically updates as the user adjusts the filter
+- [x] Clicking on an item in the list view displays more details about it
+- [x] Clicking on an item in the dashboard list navigates to the detail view for that item
+- [x] Detail view includes extra information not included in the dashboard view
+  - Address, country, phone number, coordinates, and a map link, none of which appear in the dashboard list
+- [x] The same sidebar is displayed in detail view as in dashboard view
+- [x] Each detail view of an item has a direct, unique link to that item's page
+  - e.g. `/brewery/ae7b3174-8be8-4d53-a3a5-9b8240970eea`
+- [x] The app includes at least two unique charts developed using the fetched data that tell an interesting story
+  - [x] At least two charts are incorporated into the dashboard view of the site
+  - [x] Each chart describes a different aspect of the dataset (brewery type distribution, brewery count by state)
 
 The following **optional** features are implemented:
 
-- [x] Multiple filters can be applied simultaneously (type + state + search all combine)
-- [x] Filters use different input types (text input for search, dropdowns for type and state)
-- [ ] User can enter specific bounds for filter values
+- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
 
 The following **additional** features are implemented:
 
+- [x] Sidebar navigation built with React Router (`NavLink`) that highlights the active route
+- [x] Formatted phone numbers and a generated Google Maps link on the detail page
 - [x] Loading and error states while the API call resolves
-- [x] Links out to each brewery's website when available
 
 ## Video Walkthrough
 
@@ -46,7 +41,7 @@ GIF created with ...  (e.g. LiceCap, QuickTime, Kap, or ScreenToGif)
 
 ## Notes
 
-This dashboard uses the [Open Brewery DB API](https://www.openbrewerydb.org/) to surface data about US breweries — name, type, location, and website. Summary stats (total count, states represented, and most common brewery type) are computed from the fetched dataset in `StatsBar.jsx`. Search filters by name, while the type and state dropdowns filter by different attributes, all combining together in `App.jsx`.
+This dashboard uses the [Open Brewery DB API](https://www.openbrewerydb.org/) to surface data about US breweries — name, type, location, and website. The app now uses React Router: `Layout.jsx` renders the shared `Sidebar` and an `Outlet`, with brewery data fetched once in `App.jsx` and passed down via route context. `Dashboard.jsx` holds the summary stats, two Recharts bar charts (`TypeChart.jsx`, `StateChart.jsx`), search, and filters, while `BreweryDetail.jsx` (at `/brewery/:id`, read via `useParams`) shows extended details for a single brewery not shown in the list. Each row in `BreweryList.jsx` links to its own detail route via `Link`.
 
 ## License
 
